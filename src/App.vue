@@ -8,12 +8,14 @@ let scrollDirection = true;
 function scrollTo(){
   if (scrollDirection) {
     window.scrollTo({ top: 30, behavior: "smooth" });
-    document.querySelector(".image").style.width = "820px";
+    // document.querySelector(".image").style.width = "calc(100% - 30px)";
+    document.querySelector(".image").style.transform = "translateX(30px)";
     document.querySelector(".button-scroll").style.transform = "rotate(180deg)";
 
   } else {
     window.scrollTo({ top: -30, behavior: "smooth" });
-    document.querySelector(".image").style.width = "850px";
+    // document.querySelector(".image").style.width = "100%";
+    document.querySelector(".image").style.transform = "translateX(0)";
     document.querySelector(".button-scroll").style.transform = "rotate(0deg)";
   }
   scrollDirection = !scrollDirection;
@@ -163,53 +165,57 @@ function toggleDropdown(e){
 }
 
 .header{
+  width: 100%;
   display: inline-flex;
-  flex: 100%;
   justify-content: space-evenly;
   margin-top: 1em;
 
   font-family:  'Inter';
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1em;
   line-height: normal;
   text-transform: uppercase;
   color: #FFFFFF;
 }
 
 .logo{
-  width: 150px;
-  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10em;
+  height: 3em;
   background-color: magenta;
   margin-top: 1em;
-  line-height: 42px;
-  text-align: center;
+  line-height: normal;
 }
 
 .nav-bar{
-  width: auto;
+  width: 56em;
   display: grid;
   justify-content: space-around;
   grid-template-columns: repeat(7, auto);
 }
 
 .nav-bar > div{
+  width: auto;
   height: fit-content;;
   padding: 1em;
 }
 
 .button{
-  display:inline-block;
-  color: #FFFFFF;
-  width: 250px;
-  height: 60px;
-  border-radius: 4px;
-  background-color: rgba(48, 37, 148, 1);
-  box-shadow: 0px 22px 22px rgba(0, 0, 0, 0.15);
-  margin-top: 1em;
-
-  line-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  color: #FFFFFF;
+  width: 15em;
+  height: 4em;
+  border-radius: 0.4em;
+  background-color: rgba(48, 37, 148, 1);
+  box-shadow: 0px 1em 1em rgba(0, 0, 0, 0.15);
+  margin-top: 1em;
+  line-height: normal;
 }
 
 @keyframes slideInFromLeft {
@@ -232,7 +238,7 @@ function toggleDropdown(e){
 
 .body{
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: 30% 30% 40%;
   grid-template-rows: auto 0;
 }
 
@@ -240,12 +246,15 @@ function toggleDropdown(e){
   position: relative;
   margin-left: auto; 
   margin-right: 0;
-  margin-top: 65px;
-  width: 850px;
-  height: 800px;
+  margin-top: 4em;
+  width: 100%;
+  height: 50em;
   background: url(./assets/0b7eb342eeac23eee20a7d433d8f33d7.png);
-  border-radius: 150px 0px 0px 0px;
-  transition: ease 0.5s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 3vh 0vh;
+  border-radius: 20% 0 0 0;
+  transition: all 0.5s ease-out;
   animation: 1s ease-out 0s 1 slideInFromRight;
 }
 
@@ -277,7 +286,7 @@ function toggleDropdown(e){
 
 .block2 .bar{
   margin-top: 3%;
-  height: 5px;
+  height: 0.5vh;
   width: 14em;
   background-color: rgba(186, 241, 255, 1);
 }
@@ -303,6 +312,7 @@ function toggleDropdown(e){
 .block3 > div{
   margin-top: 2em;
   display: flex;
+  align-items: center;
 }
 
 .block3 > div > .text{
@@ -315,26 +325,29 @@ function toggleDropdown(e){
 }
 
 .icon1{
-  margin-top: 5px;
   background: url(./assets/icon1.svg);
-  width: 45px;
-  height: 36px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 4.5vh;
+  height: 3.6vh;
   transform: scale(calc(40/45));
 }
 
 .icon2{
-  margin-top: 5px;
   background: url(./assets/icon2.svg);
-  width: 30px;
-  height: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 3.0vh;
+  height: 4.0vh;
 }
 
 .icon3{
-  margin-top: 5px;
   background: url(./assets/icon3.svg);
-  width: 40px;
-  height: 38px;
-  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 4.0vh;
+  height: 3.8vh;
+  margin-right: 1vh;
 }
 
 .mid-block{
@@ -342,11 +355,11 @@ function toggleDropdown(e){
   position: relative;
   left: 14vw;
   top: 10vh;
-  width: 31vw;
-  height: 26vw;
+  width: 40em;
+  height: 35em;
   background: #FFFFFF;
   border-radius: 2%;  
-  z-index: 30;
+  z-index: 3;
   animation: 1s ease-out 0s 1 slideInFromRight;
 }
 
@@ -367,8 +380,10 @@ function toggleDropdown(e){
 }
 
 .button-send{
-  margin-top: 3.5em;
-  text-align: center;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
 }
 
@@ -377,14 +392,14 @@ function toggleDropdown(e){
 }
 
 input[type="range"] {
-  border-radius: 1rem;
+  border-radius: 2vh;
 	color: rgba(190, 105, 213, 1);
-	--thumb-height: 2.2em;
-	--track-height: 0.8em;
+	--thumb-height: 3vh;
+	--track-height: 1vh;
 	--track-color: rgba(186, 241, 255, 1);
 	--brightness-hover: 180%;
 	--brightness-down: 80%;
-	--clip-edges: 0.50em;
+	--clip-edges: 0.55vh;
 }
 
 
@@ -414,7 +429,7 @@ input[type="range"]::-webkit-slider-thumb {
 	--clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
 	--clip-bottom: calc(var(--thumb-height) - var(--clip-top));
 	--clip-further: calc(100% + 1px);
-	--box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height)) + 1px) 0 0
+	--box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height)) + 0.07vh) 0 0
 		100vmax currentColor;
 
 	width: var(--thumb-width, var(--thumb-height));
@@ -480,30 +495,27 @@ input[type="range"]::-webkit-slider-runnable-track {
   align-items: center;
 }
 
-.radio-container > div{
-  padding-right: 3em;
-}
-
 .option > label{
+  display: block;
+  width: min-content;
   position: relative;
-  width: fit-content;
   line-height: normal;
-  margin-left: 0.7em;
+  padding-left: 0.7em;
 }
 
 .option{
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
   align-items: center;
+  padding-right: 3em;
 }
 
 input[type="radio"] {
   appearance: none;
   background-color: #fff;
   margin: 0;
-  width: 2.2em;
-  height: 2.2em;
-  border: 0.3em double black;
+  width: 3vh;
+  height: 3vh;
+  border: 0.4vh double black;
   border-radius: 100%;
   place-content: center;
 }
@@ -519,14 +531,17 @@ input[type="radio"]:checked {
   display: block;
   position: relative;
   left: 48vw;
-  bottom: 10vh;
+  bottom: 8em;
   width: 10em;
+  z-index: 4;
 }
 
 .button-scroll{
   background: url(./assets/scroll.svg);
-  width: 33px;
-  height: 32px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 3.11vh;
+  height: 3vh;
   transition: ease 0.5s;
 }
 
@@ -550,15 +565,15 @@ input[type="radio"]:checked {
 .drop-down-container{
   display: none;
   position: absolute;
-  left: 28.5vw;
+  left: calc((100vw - 25em - 56em)/2 + 9.7em);
   background-color: white;
   color: #5C39BA;
   margin-top: 1em;
+  padding-left: 1em;
   opacity: 1;
   width: 8em;
-  z-index: 3;
+  z-index: 4;
   line-height: 2em;
-  border: #fff 1em solid;
   border-radius: 7%;
 }
 
